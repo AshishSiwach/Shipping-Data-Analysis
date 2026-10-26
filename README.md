@@ -234,22 +234,9 @@ Open `Shipping_Data.xlsx` and use the filter buttons on the `sales` table. Add y
 - **"Orders" means order lines.** The dashboard counts rows, not distinct order numbers (1,039 lines vs 1,035 order numbers; four order numbers contain two lines).
 - **Missing values.** Two lines have no `Order Priority` and two recent lines have no `Ship Date` (not yet shipped). A further 213 lines are labelled `Not Specified` for priority.
 - **`Profit Margin` is a per-unit dollar amount**, not a percentage margin. Total profit per line is `Profit Margin × Order Quantity`.
-- **Broken named ranges.** `Order_Month` and `Ship_Time` are defined in both workbooks but point to `#REF!`, as the columns they referred to no longer exist. They are unused by any formula. `Ship_Time` is a natural column to restore (`Ship Date − Order Date`).
 - **Hard-coded dimension lists.** The dashboard's state, customer type, and account manager labels are typed in, so a new category in the data will not appear automatically.
 - **Single currency, no tax.** Currency is not stated in the source, and the data has no tax field.
 - **Data provenance.** The source of the underlying orders is not documented in the repository. Treat the dataset as illustrative.
-
----
-
-## Ideas for Extension
-
-- Add a `Ship Time` calculated column and analyse delivery performance by ship mode and priority
-- Report **profit** (not just revenue) by category, state, and account manager using `Profit Margin × Order Quantity`
-- Add slicers and a timeline to the pivots for interactive filtering
-- Replace hard-coded dashboard labels with pivot-driven or dynamic-array lists
-- Add a monthly sales trend and year-over-year growth view
-- Investigate the Delivery Truck shipping cost premium and the Technology revenue concentration
-- Recreate the analysis in Python/pandas or Power BI for comparison
 
 ---
 
